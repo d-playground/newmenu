@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cutiveMono.variable} ${nanumMyeongjo.variable} antialiased`}>
+      <body className={`${cutiveMono.variable} ${nanumMyeongjo.variable} font-serif antialiased`}>
         {children}
       </body>
     </html>

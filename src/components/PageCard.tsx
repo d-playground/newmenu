@@ -11,11 +11,12 @@ interface PageCardProps {
 export default function PageCard({ sections, pageNumber, totalPages }: PageCardProps) {
     return (
         <div
-            className="relative flex-none"
+            className="relative flex-none bg-kraft text-ink"
             style={{
                 width: "148.5mm",
                 height: "210mm",
                 padding: "14mm 9mm 6mm 9mm", // Increased top padding for clipboard clips
+                boxSizing: "border-box",
             }}
         >
             {/* Vintage decorative border */}
@@ -38,7 +39,7 @@ export default function PageCard({ sections, pageNumber, totalPages }: PageCardP
 
                 {/* Footer / Page Number */}
                 <div className="w-full flex justify-center pb-2">
-                    <span className="font-sans text-[9px] text-ink-soft tracking-[3px] opacity-70">
+                    <span className="font-serif text-[9px] text-ink-soft tracking-[3px] opacity-70">
                         {String(pageNumber).padStart(2, "0")} / {String(totalPages).padStart(2, "0")}
                     </span>
                 </div>
