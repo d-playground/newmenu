@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-kraft: #c9b99a;
+  --color-kraft-light: #d4c6a8;
+  --color-kraft-dark: #b5a07a;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #2d2519;
+  --color-gold: #6b5b3e;
+  --color-red: #7a1a1a;
+  --color-red-bright: #8b1a1a;
+  --color-wrapper: #23201d;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-cutive-mono);
+  --font-serif: var(--font-nanum-myeongjo);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-wrapper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@page {
+  /* A4 landscape for printing 2x A5 side-by-side */
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background-color: transparent;
+    display: block;
+    min-height: auto;
+  }
+  
+  /* Reset background styles for print to ensure the kraft background prints */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }
